@@ -9,5 +9,9 @@
     <input type="submit" value="Se connecter">
 </form>
 <?php
+    if(isset($notif))
+        echo $notif;
+?>
+<?php
     require_once FOOTER;
 ?>

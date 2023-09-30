@@ -9,7 +9,8 @@
             $this->request = $request;
             $this->allRequest = [
                 'SystemeController' => [
-                    'index' => 'getFormAuthentification'
+                    'index' => 'getFormAuthentification',
+                    'authentification' => 'authentification'
                 ]
             ];
         }
