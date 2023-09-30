@@ -3,7 +3,7 @@ include('config.php');
 
 
 if(!isset($_GET['r']))
-    $request = 'home';
+    $request = 'index';
 else
     $request = $_GET['r'];
 

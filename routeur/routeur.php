@@ -8,15 +8,15 @@
         public function __construct($request){
             $this->request = $request;
             $this->allRequest = [
-                'AdminController' => [
-                    'url' => 'methode'
+                'SystemeController' => [
+                    'index' => 'getFormAuthentification'
                 ]
             ];
         }
         //cette fonction renvoi au controleur demandé
         public function goToController(){
             //inclusion des controleurs
-            require_once(CONTROLLER.'AdminController.php');
+            require_once(CONTROLLER.'SystemeController.php');
 
             //instantiation du controleur et déclanchement de la méthode
             $_404 = false;
