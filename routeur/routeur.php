@@ -27,7 +27,6 @@
                     $classeController = new $controller();//instantiation du controleur
                     $classeController->$methode();//déclanchement de la méthode
                     $_404 = true;
-
                     break;
                 }
             }
