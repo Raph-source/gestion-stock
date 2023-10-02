@@ -22,9 +22,10 @@
                                     a.classList.toggle('errVis')
                                 "; 
                                 echo "</script>";
+                                echo $notif;
+                                echo ' </p>';
                             }
-                        echo $notif;
-                        echo ' </p>';
+                        
                     ?>
             
         </form>

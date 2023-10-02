@@ -1,0 +1,284 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost
+-- Généré le : lun. 02 oct. 2023 à 16:13
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `stock`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `client`
+--
+
+CREATE TABLE `client` (
+  `nomClient` varchar(255) DEFAULT NULL,
+  `phone` varchar(13) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `facturier`
+--
+
+CREATE TABLE `facturier` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `adresse` varchar(100) DEFAULT NULL,
+  `phone` varchar(13) DEFAULT NULL,
+  `pwd` varchar(16) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `facturier`
+--
+
+INSERT INTO `facturier` (`id`, `nom`, `adresse`, `phone`, `pwd`) VALUES
+(1, 'Elie', NULL, '+243995648230', '1234');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `gestionnaireAchat`
+--
+
+CREATE TABLE `gestionnaireAchat` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `adresse` varchar(100) DEFAULT NULL,
+  `phone` varchar(13) DEFAULT NULL,
+  `pwd` varchar(16) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `gestionnaireAchat`
+--
+
+INSERT INTO `gestionnaireAchat` (`id`, `nom`, `adresse`, `phone`, `pwd`) VALUES
+(1, 'orbut', NULL, '+243995658552', '1234');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `gestionnaireStock`
+--
+
+CREATE TABLE `gestionnaireStock` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `adresse` varchar(100) DEFAULT NULL,
+  `phone` varchar(13) DEFAULT NULL,
+  `pwd` varchar(16) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `gestionnaireStock`
+--
+
+INSERT INTO `gestionnaireStock` (`id`, `nom`, `adresse`, `phone`, `pwd`) VALUES
+(1, 'raph', NULL, '+243975191209', '1234');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `produit`
+--
+
+CREATE TABLE `produit` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) DEFAULT NULL,
+  `prix` float DEFAULT NULL,
+  `uniteMax` int(11) DEFAULT NULL,
+  `uniteMin` int(11) DEFAULT NULL,
+  `uniteSec` int(11) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `produit`
+--
+
+INSERT INTO `produit` (`id`, `nom`, `prix`, `uniteMax`, `uniteMin`, `uniteSec`, `stock`) VALUES
+(1, 'AMIDOL C SYRP 100ML', 0.65, NULL, NULL, NULL, NULL),
+(2, 'AMIDOL COLD & FLU TABS 1000 ML', 1.05, NULL, NULL, NULL, NULL),
+(3, 'AMIDOL COLD INF 1G 100ML', 1, NULL, NULL, NULL, NULL),
+(4, 'AMIDOL COLD 1 FLUS TABS 4T', 0.12, NULL, NULL, NULL, NULL),
+(5, 'AMIDOL INJ 750MG 5AMP', 0.75, NULL, NULL, NULL, NULL),
+(6, 'AMIDOL INJ 750MG 10AMP', 0.95, NULL, NULL, NULL, NULL),
+(7, 'AMIDOL TABS 500MG 25X10T', 2.32, NULL, NULL, NULL, NULL),
+(8, 'AMIDOL AMIDOL FEMMME TAB 500/20MG ', 1, NULL, NULL, NULL, NULL),
+(9, 'AMIDOL GRIP SACHET 1X8', 1.56, NULL, NULL, NULL, NULL),
+(10, 'AMLOX TABS 10MG 30T', 2.5, NULL, NULL, NULL, NULL),
+(11, 'AMLOX TABS 5MG 30T', 1.95, NULL, NULL, NULL, NULL),
+(12, 'AMOXY CAPS 250MG 10X10C', 1.8, NULL, NULL, NULL, NULL),
+(13, 'AMOXY INJ 1G VIAL', 0.18, NULL, NULL, NULL, NULL),
+(14, 'AMOXY CAPS 500MG 10X10C', 3, NULL, NULL, NULL, NULL),
+(15, 'AMPIO INJ 1G VIAL', 0.18, NULL, NULL, NULL, NULL),
+(16, 'ANAFLAM NOUVELLE TAB10X10T', 2.2, NULL, NULL, NULL, NULL),
+(17, 'ANAFLAM SUSP 60ML', 0.5, NULL, NULL, NULL, NULL),
+(18, 'ARMETHAR INJ 80MG/ML 6X1AMMPS', 0.9, NULL, NULL, NULL, NULL),
+(19, 'ASPIRIN TABS 500MG 25X10T', 2, NULL, NULL, NULL, NULL),
+(20, 'ASPIRIN TABS 500MG 1X3T', 1.8, NULL, NULL, NULL, NULL),
+(21, 'AZIMYN TABS 500MG 25X10T', 2, NULL, NULL, NULL, NULL),
+(22, 'AZIMYN FS KIT 1X4T', 2.5, NULL, NULL, NULL, NULL),
+(23, 'BETASOL CREAM 15G', 0.28, NULL, NULL, NULL, NULL),
+(24, 'BETASOL CREAM 30G', 0.46, NULL, NULL, NULL, NULL),
+(25, 'BETASOL LOTION 30ML', 0.6, NULL, NULL, NULL, NULL),
+(26, 'CAL-D TABS 10X15T', 3.8, NULL, NULL, NULL, NULL),
+(27, 'CANDERM DUSTING POWDER 100G', 1.1, NULL, NULL, NULL, NULL),
+(28, 'CANDERM DUSTING POWDER 50G', 0.63, NULL, NULL, NULL, NULL),
+(29, 'CEFATAX INJ 1G VIAL', 0.24, NULL, NULL, NULL, NULL),
+(30, 'CEPSHAL DS SUSP 125MG 60ML', 2.5, NULL, NULL, NULL, NULL),
+(31, 'CEVITE TABS 500MG 10X10T', 2.4, NULL, NULL, NULL, NULL),
+(32, 'CLARINEZ NASAL DROPS 0,5% 10ML', 0.41, NULL, NULL, NULL, NULL),
+(33, 'CLINDASH INJ 150MG', 0.3, NULL, NULL, NULL, NULL),
+(34, 'CLIONDASH CAP 300MG', 3, NULL, NULL, NULL, NULL),
+(35, 'DEXAMETHASONE IN 4MG', 0.38, NULL, NULL, NULL, NULL),
+(36, 'DICLOFENAC INJ 75MG', 0.5, NULL, NULL, NULL, NULL),
+(37, 'DIPROSON CREAM 15G', 0.27, NULL, NULL, NULL, NULL),
+(38, 'DIPROSON CREAM 30G', 0.38, NULL, NULL, NULL, NULL),
+(39, 'DIPROSON LOTION 30 ML', 0.6, NULL, NULL, NULL, NULL),
+(40, 'DIZAPAM TABS 10MG', 1.5, NULL, NULL, NULL, NULL),
+(41, 'EFICEF 400 TABS 10MG 25X10T', 1.5, NULL, NULL, NULL, NULL),
+(42, 'EFISHAL CAPS 200MG 30C', 1.85, NULL, NULL, NULL, NULL),
+(43, 'EPIDERM CREAM 15G', 0.3, NULL, NULL, NULL, NULL),
+(44, 'EPIDERM CREAM 30G', 0.49, NULL, NULL, NULL, NULL),
+(45, 'CEVITE EFFERVESCENT TABS 1G 10T', 1.8, NULL, NULL, NULL, NULL),
+(46, 'EFICEF DISPERSIBLE TABS 200MG ', 1.5, NULL, NULL, NULL, NULL),
+(47, 'EFICET SUSP 100MG/5ML 60ML', 1.35, NULL, NULL, NULL, NULL),
+(48, 'EPIDERM LIGHT CREAM 120ML', 1.15, NULL, NULL, NULL, NULL),
+(49, 'EPIDERM LIGHT LOTION 120ML', 1.15, NULL, NULL, NULL, NULL),
+(50, 'EPIDERM LOTION 30ML', 0.6, NULL, NULL, NULL, NULL),
+(51, 'ERYSHAL TABS 500MG', 5.2, NULL, NULL, NULL, NULL),
+(52, 'ERYSHAL TABS 250MG', 2.85, NULL, NULL, NULL, NULL),
+(53, 'FLAZINE CREAM 50G', 0.87, NULL, NULL, NULL, NULL),
+(54, 'FLODENT TOOTHPASTE 100G', 0.55, NULL, NULL, NULL, NULL),
+(55, 'FLODENT TRIPLE ACTION TOOTHPASTE 100G', 0.65, NULL, NULL, NULL, NULL),
+(56, 'FUNAZOL TABS 150MG', 0.12, NULL, NULL, NULL, NULL),
+(57, 'GERMOL HANS SANITIZER 100ML_ALOE VERA', 0.65, NULL, NULL, NULL, NULL),
+(58, 'GERMOL HANS SANITIZER 100ML_ROSE', 0.65, NULL, NULL, NULL, NULL),
+(59, 'GERMOL LIQUID 1000ML', 6, NULL, NULL, NULL, NULL),
+(60, 'GERMOL LIQUID 100ML', 0.85, NULL, NULL, NULL, NULL),
+(61, 'GERMOL LIQUID 250ML', 1.8, NULL, NULL, NULL, NULL),
+(62, 'GERMOL LIQUID 500ML', 3.5, NULL, NULL, NULL, NULL),
+(63, 'GERMOL LIQUID 50ML', 0.56, NULL, NULL, NULL, NULL),
+(64, 'GERMOL SOAP 125G', 0.8, NULL, NULL, NULL, NULL),
+(65, 'GERMOL SOAP 75G', 0.5, NULL, NULL, NULL, NULL),
+(66, 'GLIBEN M TABS 30T', 1.4, NULL, NULL, NULL, NULL),
+(67, 'GLIBEN TAB 5MGS 3X10T', 1, NULL, NULL, NULL, NULL),
+(68, 'GOGYNAX CREAM 30G', 0.51, NULL, NULL, NULL, NULL),
+(69, 'GOGYNAX CREAM 100MG 6T', 0.55, NULL, NULL, NULL, NULL),
+(70, 'GRISOFLINE TABS 500MG 10K10T', 6.9, NULL, NULL, NULL, NULL),
+(71, 'IBUCUP CAPS 10X10C', 1.6, NULL, NULL, NULL, NULL),
+(72, 'IBUCUP CAPS 25X10C', 3.9, NULL, NULL, NULL, NULL),
+(73, 'IBUCUP COLD & FLU SYRP 100ML', 0.7, NULL, NULL, NULL, NULL),
+(74, 'IBUCUP FORTE CAPS 10X10C', 2.2, NULL, NULL, NULL, NULL),
+(75, 'IBUCUP GEL 30G', 1, NULL, NULL, NULL, NULL),
+(76, 'IBUCUP SUSP 100.125MG 60ML', 0.7, NULL, NULL, NULL, NULL),
+(77, 'KETALIN INJ VIAL', 0.9, NULL, NULL, NULL, NULL),
+(78, 'KETAZOL CREAM 15G', 0.28, NULL, NULL, NULL, NULL),
+(79, 'KETAZOL CREAM 30G', 0.46, NULL, NULL, NULL, NULL),
+(80, 'KETAZOL LOTION 30ML', 0.71, NULL, NULL, NULL, NULL),
+(81, 'KETAZOL SHAMPOO 100ML', 0.9, NULL, NULL, NULL, NULL),
+(82, 'KIFARU_50TAB 2T', 0.2, NULL, NULL, NULL, NULL),
+(83, 'KIFARU JELLY 100MG', 0.45, NULL, NULL, NULL, NULL),
+(84, 'KIFARU FORCE TAB 100/60MG', 1, NULL, NULL, NULL, NULL),
+(85, 'L_ARTEM TABS 12T', 0.75, NULL, NULL, NULL, NULL),
+(86, 'L_ARTEM DISPERSIBLE TABS 1X4T', 0.8, NULL, NULL, NULL, NULL),
+(87, 'LEOPARD BALM 25G', 0.64, NULL, NULL, NULL, NULL),
+(88, 'LEOPARD BALM 6G 12PCS', 2, NULL, NULL, NULL, NULL),
+(89, 'LEVASOL TABS 50MG 25X10T', 2.5, NULL, NULL, NULL, NULL),
+(90, 'MALDOX TABS 3T', 0.26, NULL, NULL, NULL, NULL),
+(91, 'METAZOL SUP 125MG', 0.55, NULL, NULL, NULL, NULL),
+(92, 'OPARIN INJ 100MG ', 1.25, NULL, NULL, NULL, NULL),
+(93, 'PLZNFA% TABS 1.2MG 1X1T', 0.8, NULL, NULL, NULL, NULL),
+(94, 'QUININE INJ 600MG/2ML 10 AMPPS', 1.1, NULL, NULL, NULL, NULL),
+(95, 'RAMSHAL TABS H 10MG/12.5MG 30T', 3.5, NULL, NULL, NULL, NULL),
+(96, 'TANZOL PLUS TAB 1X1T', 0.22, NULL, NULL, NULL, NULL),
+(97, 'TELESHAL TABS 20MG 30T', 2.5, NULL, NULL, NULL, NULL),
+(98, 'TETRA CAPS 250MG 10X10C', 1.7, NULL, NULL, NULL, NULL);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`phone`);
+
+--
+-- Index pour la table `facturier`
+--
+ALTER TABLE `facturier`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `gestionnaireAchat`
+--
+ALTER TABLE `gestionnaireAchat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `gestionnaireStock`
+--
+ALTER TABLE `gestionnaireStock`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `produit`
+--
+ALTER TABLE `produit`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nom` (`nom`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `facturier`
+--
+ALTER TABLE `facturier`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `gestionnaireAchat`
+--
+ALTER TABLE `gestionnaireAchat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `gestionnaireStock`
+--
+ALTER TABLE `gestionnaireStock`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `produit`
+--
+ALTER TABLE `produit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
