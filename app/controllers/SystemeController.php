@@ -15,7 +15,7 @@
 
             }
             else{
-                $notif = "pas de champs vide svp !!!";
+                $notif = "Pas de champs vide svp !!!";
                 require_once VIEW.'authentification.php';
             }
         }
