@@ -3,6 +3,6 @@ class Model{
     protected $bdd;
 
     public function __construct(){
-        $this->bdd = new PDO("mysql:host=localhost;dbname=bdd", "user", 'password');
+        $this->bdd = new PDO("mysql:host=localhost;dbname=stock", "root", '');
     }
 }
