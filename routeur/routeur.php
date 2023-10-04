@@ -11,6 +11,9 @@
                 'SystemeController' => [
                     'index' => 'getFormAuthentification',
                     'authentification' => 'authentification'
+                ],
+                'facturierController' => [
+                    'chercherProduit' => 'chercherProduit'
                 ]
             ];
         }
@@ -18,6 +21,7 @@
         public function goToController(){
             //inclusion des controleurs
             require_once(CONTROLLER.'SystemeController.php');
+            require_once(CONTROLLER.'facturierController.php');
 
             //instantiation du controleur et déclanchement de la méthode
             $_404 = false;

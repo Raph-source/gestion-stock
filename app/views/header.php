@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://localhost/favicon.ico">
     <title><?php if (isset($title)) echo $title; else echo "Document"; ?></title>
     <link rel="stylesheet" href="<?php if(isset($style))echo $style;?>">
     <link rel="stylesheet" href="<?php if(isset($bootstrap))echo $bootstrap;?>">
