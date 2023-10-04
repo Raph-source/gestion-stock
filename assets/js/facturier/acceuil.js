@@ -8,10 +8,13 @@ validation.disabled = true;
 //generer le formulaire
 produitTrouver.addEventListener('click', function(event){
     let produitSelectioner = event.target;
-    //mettre le nom du produit dans le input
-    produitChercher.value = produitSelectioner.value;
-    //supprimer le proposition
-    produitTrouver.innerHTML = "";
-    //activer le boutton submit
-    validation.disabled = false;
+
+    if(produitSelectioner.value !== undefined){
+        //mettre le nom du produit dans le input
+        produitChercher.value = produitSelectioner.value;
+        //supprimer le proposition
+        produitTrouver.innerHTML = "";
+        //activer le boutton submit
+        validation.disabled = false;
+    }
 });
