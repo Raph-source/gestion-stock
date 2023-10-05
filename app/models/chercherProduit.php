@@ -5,7 +5,7 @@ class ChercherProduit{
         $this->bdd = new PDO("mysql:host=localhost;dbname=stock", "root", '');
     }
     public function getProduits($enter):array{
-        $requete = $this->bdd->prepare('SELECT nom FROM produit WHERE nom LIKE :entrer');
+        $requete = $this->bdd->prepare('SELECT nom FROM produit WHERE nom LIKE :entrer ORDER BY id ASC');
         $requete->bindValue(':entrer', '%' . $enter . '%');
 
         $requete->execute();

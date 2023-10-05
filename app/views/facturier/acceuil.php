@@ -4,7 +4,7 @@
     require_once HEADER;
 ?>
 <form action="genererFacture" method="post">
-<input type="text" id="produitChercher" placeholder="Rechercher..." /><br>
+<input type="text" name="produitChercher" id="produitChercher" placeholder="Rechercher..." /><br>
 <input type="submit" value="valider" id="validation">
 </form>
 

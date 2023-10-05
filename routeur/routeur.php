@@ -14,6 +14,9 @@
                 ],
                 'facturierController' => [
                     'chercherProduit' => 'chercherProduit'
+                ],
+                'gestionnaireStockController' => [
+                    'politique-stock' => 'definirPolitiqueStock'
                 ]
             ];
         }
@@ -22,6 +25,7 @@
             //inclusion des controleurs
             require_once(CONTROLLER.'SystemeController.php');
             require_once(CONTROLLER.'facturierController.php');
+            require_once(CONTROLLER.'gestionnaireStockController.php');
 
             //instantiation du controleur et déclanchement de la méthode
             $_404 = false;

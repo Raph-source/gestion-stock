@@ -10,7 +10,7 @@ class SuperGlobal{
         $lenArray = count($arrayOfKeys);
 
         foreach($arrayOfKeys as $key){
-            if(!empty($_POST[$key])){
+            if(isset($_POST[$key])){
                 $this->post[$key] = escapeshellcmd(htmlspecialchars($_POST[$key]));
                 $trouver++;
             }

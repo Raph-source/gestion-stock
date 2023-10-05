@@ -1,9 +1,14 @@
 <?php
 require_once MODEL.'model.php';
+require_once MODEL.'produit.php';
 class GestionnaireStock extends Model{
     private $pseudo;
     private $pwd;
+    public $produit;
 
+    public function __construct(){
+        $this->produit = new Produit();
+    }
     public function setAttribut($pseudo, $pwd){
         $this->pseudo = $pseudo;
         $this->pwd = $pwd;

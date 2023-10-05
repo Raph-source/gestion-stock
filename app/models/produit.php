@@ -2,14 +2,39 @@
 require_once MODEL.'model.php';
 class Produit extends Model{
 
-    public function getProduits($enter):array{
-        $requete = $this->bdd->prepare('SELECT nom FROM produit WHERE nom LIKE :entrer');
-        $requete->bindValue(':entrer', '%' . $enter . '%');
+    private $produitChercher;
+    private $uniteMax;
+    private $uniteMin;
+    private $uniteSec;
+    public function setAttrbut($produitChercher, $uniteMax, $uniteMin, $uniteSec){
+        $this->produitChercher = $produitChercher;
+        $this->uniteMax = $uniteMax;
+        $this->uniteMin = $uniteMin;
+        $this->uniteSec = $uniteSec;
+    }
+    public function checkProduit():bool{
+        $requete = $this->bdd->prepare('SELECT * FROM produit WHERE nom = :nom');
+        $requete->bindParam(':nom', $this->produitChercher);
 
         $requete->execute();
-        $trouver = $requete->fetchAll(PDO::FETCH_COLUMN);
+        $trouver = $requete->fetchAll();
 
-        return $trouver;    
+        if(count($trouver) != 0)
+            return true;
+        return false;
+    }
+
+    public function setPolitiqueStock():void{
+        $requete = $this->bdd->prepare("UPDATE produit SET uniteMax = :uniteMax, uniteMin = :uniteMin, uniteSec = :uniteSec
+        WHERE nom = :nom");
+        
+        $requete->bindParam(':uniteMax', $this->uniteMax);
+        $requete->bindParam(':uniteMin', $this->uniteMin);
+        $requete->bindParam(':uniteSec', $this->uniteSec);
+        $requete->bindParam(':nom', $this->produitChercher);
+        
+        $requete->execute();
+
     }
 
 }
