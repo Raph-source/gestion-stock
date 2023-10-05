@@ -4,11 +4,11 @@
     require_once HEADER;
 ?>
 <form action="formulaire-politique-stock" method="post">
-<input type="text" name="produitChercher" id="produitChercher" placeholder="Rechercher..." /><br>
-<input type="text" name="uniteMax"  placeholder="Entrer l'unite maximal"/><br>
-<input type="text" name="uniteMin"  placeholder="Entrer l'unite minimal"/><br>
-<input type="text" name="uniteSec"  placeholder="Entrer l'unite de securité"/><br>
-<input type="submit" value="valider" id="validation">
+    <input type="text" name="produitChercher" id="produitChercher" placeholder="Rechercher..." /><br>
+    <input type="number" name="uniteMax"  placeholder="Entrer l'unite maximal"/><br>
+    <input type="number" name="uniteMin"  placeholder="Entrer l'unite minimal"/><br>
+    <input type="number" name="uniteSec"  placeholder="Entrer l'unite de securité"/><br>
+    <input type="submit" value="valider" id="validation">
 </form>
 
 <div id="produitTrouver">

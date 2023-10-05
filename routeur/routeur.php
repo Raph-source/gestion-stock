@@ -18,6 +18,10 @@
                 'gestionnaireStockController' => [
                     'definir-politique-stock' => 'getFormPolitiqueStock',
                     'formulaire-politique-stock' => 'definirPolitiqueStock'
+                ],
+
+                'gestionnaireAchatController' => [
+                    'approvisioner-stock' => 'getFormApprovisionerStock'
                 ]
             ];
         }
@@ -27,6 +31,7 @@
             require_once(CONTROLLER.'SystemeController.php');
             require_once(CONTROLLER.'facturierController.php');
             require_once(CONTROLLER.'gestionnaireStockController.php');
+            require_once(CONTROLLER.'gestionnaireAchatController.php');
 
             //instantiation du controleur et déclanchement de la méthode
             $_404 = false;
