@@ -21,7 +21,8 @@
                 ],
 
                 'gestionnaireAchatController' => [
-                    'approvisioner-stock' => 'getFormApprovisionerStock'
+                    'approvisioner-stock' => 'getFormApprovisionerStock',
+                    'formulaire-approvisioner-stock' => 'approvisionerStock'
                 ]
             ];
         }

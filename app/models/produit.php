@@ -37,4 +37,22 @@ class Produit extends Model{
 
     }
 
+    public function getUniteMax():int{
+        
+        $requete = $this->bdd->prepare("SELECT uniteMax FROM produit WHERE nom = :nom");
+        $requete->bindParam(':nom', $this->produitChercher);
+        $requete->execute();
+
+        $trouver = $requete->fetch();
+        
+        return $trouver['uniteMax'];
+    }
+
+    public function fournir($qte){
+        $requete = $this->bdd->prepare("UPDATE produit SET stock = :stock WHERE nom = :nom");
+        $requete->bindParam(':stock', $qte);
+        $requete->bindParam(':nom', $this->produitChercher);
+
+        $requete->execute();
+    }
 }

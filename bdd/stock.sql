@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 02 oct. 2023 à 16:13
+-- Généré le : jeu. 05 oct. 2023 à 22:28
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -52,6 +52,25 @@ CREATE TABLE `facturier` (
 
 INSERT INTO `facturier` (`id`, `nom`, `adresse`, `phone`, `pwd`) VALUES
 (1, 'Elie', NULL, '+243995648230', '1234');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `fournisseur`
+--
+
+CREATE TABLE `fournisseur` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `fournisseur`
+--
+
+INSERT INTO `fournisseur` (`id`, `nom`) VALUES
+(1, 'shalina india'),
+(2, 'medical store');
 
 -- --------------------------------------------------------
 
@@ -108,7 +127,7 @@ CREATE TABLE `produit` (
   `uniteMax` int(11) DEFAULT NULL,
   `uniteMin` int(11) DEFAULT NULL,
   `uniteSec` int(11) DEFAULT NULL,
-  `stock` int(11) DEFAULT NULL
+  `stock` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -116,7 +135,7 @@ CREATE TABLE `produit` (
 --
 
 INSERT INTO `produit` (`id`, `nom`, `prix`, `uniteMax`, `uniteMin`, `uniteSec`, `stock`) VALUES
-(1, 'AMIDOL C SYRP 100ML', 0.65, NULL, NULL, NULL, NULL),
+(1, 'AMIDOL C SYRP 100ML', 0.65, 100, 20, 50, 100),
 (2, 'AMIDOL COLD & FLU TABS 1000 ML', 1.05, NULL, NULL, NULL, NULL),
 (3, 'AMIDOL COLD INF 1G 100ML', 1, NULL, NULL, NULL, NULL),
 (4, 'AMIDOL COLD 1 FLUS TABS 4T', 0.12, NULL, NULL, NULL, NULL),
@@ -144,7 +163,7 @@ INSERT INTO `produit` (`id`, `nom`, `prix`, `uniteMax`, `uniteMin`, `uniteSec`, 
 (26, 'CAL-D TABS 10X15T', 3.8, NULL, NULL, NULL, NULL),
 (27, 'CANDERM DUSTING POWDER 100G', 1.1, NULL, NULL, NULL, NULL),
 (28, 'CANDERM DUSTING POWDER 50G', 0.63, NULL, NULL, NULL, NULL),
-(29, 'CEFATAX INJ 1G VIAL', 0.24, NULL, NULL, NULL, NULL),
+(29, 'CEFATAX INJ 1G VIAL', 0.24, 500, 100, 250, NULL),
 (30, 'CEPSHAL DS SUSP 125MG 60ML', 2.5, NULL, NULL, NULL, NULL),
 (31, 'CEVITE TABS 500MG 10X10T', 2.4, NULL, NULL, NULL, NULL),
 (32, 'CLARINEZ NASAL DROPS 0,5% 10ML', 0.41, NULL, NULL, NULL, NULL),
@@ -232,6 +251,12 @@ ALTER TABLE `facturier`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `fournisseur`
+--
+ALTER TABLE `fournisseur`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `gestionnaireAchat`
 --
 ALTER TABLE `gestionnaireAchat`
@@ -258,6 +283,12 @@ ALTER TABLE `produit`
 -- AUTO_INCREMENT pour la table `facturier`
 --
 ALTER TABLE `facturier`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `fournisseur`
+--
+ALTER TABLE `fournisseur`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
