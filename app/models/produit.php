@@ -6,7 +6,7 @@ class Produit extends Model{
     private $uniteMax;
     private $uniteMin;
     private $uniteSec;
-    public function setAttrbut($produitChercher, $uniteMax, $uniteMin, $uniteSec){
+    public function setAttribut($produitChercher, $uniteMax, $uniteMin, $uniteSec){
         $this->produitChercher = $produitChercher;
         $this->uniteMax = $uniteMax;
         $this->uniteMin = $uniteMin;

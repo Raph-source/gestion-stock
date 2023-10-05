@@ -7,6 +7,7 @@ class GestionnaireStock extends Model{
     public $produit;
 
     public function __construct(){
+        parent::__construct(); 
         $this->produit = new Produit();
     }
     public function setAttribut($pseudo, $pwd){
@@ -14,6 +15,7 @@ class GestionnaireStock extends Model{
         $this->pwd = $pwd;
     }
     public function checkAuthentification():bool{
+
         $requete = $this->bdd->prepare("SELECT * FROM gestionnaireStock WHERE nom = :pseudo AND pwd = :pwd");
         $requete->bindParam(':pseudo', $this->pseudo);
         $requete->bindParam(':pwd', $this->pwd);
@@ -24,7 +26,6 @@ class GestionnaireStock extends Model{
         if(count($trouver) != 0)
             return true;
         return false;
-
     }
 
 }

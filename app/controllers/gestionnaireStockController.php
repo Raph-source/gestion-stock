@@ -9,6 +9,9 @@ class GestionnaireStockController{
         $this->model = new GestionnaireStock();
     }
 
+    public function getFormPolitiqueStock(){
+        require_once VIEW.'gestionnaireStock/politiqueStock.php';
+    }
     public function definirPolitiqueStock(){
         //verification des champs du formulaire
         if($this->superGlobal->checkPost(['produitChercher', 'uniteMax', 'uniteMin', 'uniteSec'])){
@@ -19,7 +22,7 @@ class GestionnaireStockController{
             $uniteSec = intval($this->superGlobal->post['uniteSec']);
             
             //donner les attributs au produit
-            $this->model->produit->setAttrbut($produitChercher, $uniteMax, $uniteMin, $uniteSec);
+            $this->model->produit->setAttribut($produitChercher, $uniteMax, $uniteMin, $uniteSec);
 
             //tester si le produit existe
             if($this->model->produit->checkProduit()){
@@ -29,21 +32,21 @@ class GestionnaireStockController{
                     $this->model->produit->setPolitiqueStock();
                     
                     $notif = "politique define avec succès";
-                    require_once VIEW.'gestionnaireStock/acceuil.php';
+                    require_once VIEW.'gestionnaireStock/politiqueStock.php';
                 }
                 else{
                     $notif = "les unitées ne sont pas valides";
-                    require_once VIEW.'gestionnaireStock/acceuil.php';
+                    require_once VIEW.'gestionnaireStock/politiqueStock.php';
                 }
             }
             else{
                 $notif = "ce produit n'existe pas !!!";
-                require_once VIEW.'gestionnaireStock/acceuil.php';
+                require_once VIEW.'gestionnaireStock/politiqueStock.php';
             }
         }
         else{
             $notif = "pas des champs vide svp !!!";
-            require_once VIEW.'gestionnaireStock/acceuil.php';
+            require_once VIEW.'gestionnaireStock/politiqueStock.php';
         }
     }
 

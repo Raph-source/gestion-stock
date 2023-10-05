@@ -6,10 +6,13 @@ class Facturier extends Model{
     private $pwd;
     public $produit;
 
+    public function __construct(){
+        parent::__construct(); 
+        $this->produit = new Produit();
+    }
     public function setAttribut($pseudo, $pwd){
         $this->pseudo = $pseudo;
         $this->pwd = $pwd;
-        $this->produit = new Produit();
     }
     public function checkAuthentification():bool{
         $requete = $this->bdd->prepare("SELECT * FROM facturier WHERE nom = :pseudo AND pwd = :pwd");

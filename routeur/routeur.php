@@ -16,7 +16,8 @@
                     'chercherProduit' => 'chercherProduit'
                 ],
                 'gestionnaireStockController' => [
-                    'politique-stock' => 'definirPolitiqueStock'
+                    'definir-politique-stock' => 'getFormPolitiqueStock',
+                    'formulaire-politique-stock' => 'definirPolitiqueStock'
                 ]
             ];
         }
