@@ -18,3 +18,25 @@ produitTrouver.addEventListener('click', function(event){
         validation.disabled = false;
     }
 });
+let look = document.querySelector('.look');
+let barre = document.querySelector('.barre');
+let all = document.querySelector('.all');
+let hor = document.querySelector('.hor');
+
+let n = 0
+setInterval(() => {
+    if (look.getAttribute('class') == 'look look1' && barre.getAttribute('class')=='barre barre1') {
+        look.classList.remove('look1');
+        barre.classList.remove('barre1');
+        all.classList.remove('div-sasa');
+        hor.classList.remove('div-sasa1')
+    }
+    else{
+        look.classList.add('look1');
+        barre.classList.add('barre1')
+        all.classList.add('div-sasa')
+        hor.classList.add('div-sasa1')
+    }
+    n++
+    
+}, 1000);

@@ -1,5 +1,6 @@
 @import "fx";
-
+$blue-color : rgb(0, 162, 255);
+$temp-color : rgb(0, 255, 149);
 *{
     margin: 0;
     padding: 0;
@@ -8,13 +9,184 @@
 }
 html{
     height: 100vh;
+    body{
+        height: 100%
+    }
 }
+.header
+{
+    position: fixed;
+    display:flex;
+    z-index: 8;
+    left: 3em;
+    top: 3em;
+    font-size: 30px;
+    h3{
+        margin-left: 1.5em;
+        color: white;
+        transition: all 0.3s ease-in-out;
+        span{
+            color:  rgb(0, 255, 149);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    .all{
+        position: absolute;
+        top: 0.1em;
+        background-color: rgb(0, 255, 149);
+        width: 0.5em;
+        height: 1.5em;
+        transition: all 0.3s ease-in-out;
+        .hor{
+            position: absolute;
+            background-color: rgb(0, 255, 149);
+            transform: rotate(-90deg);
+            width: 0.5em;
+            height: 1.5em;
+            transition: all 0.3s ease-in-out;
+        }
+        .div-sasa1
+        {
+            position: absolute;
+            transform: rotate(-90deg) translateY(-1em);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            background-color: rgb(255, 255, 255);
+        }
+    }
+    .div-sasa
+    {
+        height: 0;
+        transition: all 0.3s ease-in-out;
+        background-color: rgb(255, 255, 255);
+    }
+
+}
+
 .container{
-    z-index: 0;
-    @include center_flex(column,center,top);
+    @include center_flex(row,center,top);
     position: relative;
-    margin-top: 8em;
     height: 100%;
+
+    .content{
+        position: fixed;
+        background-color: rgba($blue-color, 0.616);
+        width: 50%;
+        height: 100%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        .ecrit{
+            position: absolute;
+            top: 30%;
+            left: 5em;
+            width: 50%;
+            height: 15em;
+            h3{
+                position: absolute;
+                top: 20%;
+                font-size: 40px;
+                color: white;
+                z-index: 5;
+                &:last-child{
+                    color:  rgb(0, 255, 149);
+                    text-shadow: 0px 0px 1px rgb(143, 143, 143);
+                    top: 40%;
+                }
+            }
+        }
+        .anim-chearch
+        {
+            position: relative;
+            top: 65%;
+            left: 0%;
+        }
+        .look{
+            position: absolute;
+            background-color: rgb(247, 247, 247);
+            top: 2em;
+            width: 4em;
+            height: 4em;
+            border-radius: 50%;
+            left: 30%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 4;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid none;
+            transition-delay: 0s;
+
+
+        }
+        .barre{
+            position: absolute;
+            width: 0.6em;
+            left: 33.5%;
+            top: -2em;
+            height: 7em;
+            transform: rotate(-50deg);
+            border-radius: 5em;
+            background-color: white;
+            z-index: 3;
+            transition: all 0.3s ease-in-out;
+        }
+        .barre1
+        {
+            left: 28%;
+            top: 0em;
+            height: 0;
+            transition: all 0.3s ease-in-out;
+            
+            background-color: rgba($blue-color, 0.616);
+        }
+        .look1
+        {
+            width: 15em;
+            border-radius: 2em;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid white;
+            transition-delay: 0.3s;
+            background-color: rgba($blue-color, 0.616); 
+            &::after
+            {
+                content: "";
+                position: absolute;
+                top: 1em;
+                left: 2em;
+                width: 1px;
+                height: 2em;
+                background-color: rgb(255, 255, 255);
+            }
+        }
+        &::after
+        {
+            content: "";
+            position: fixed;
+            width: 50%;
+            height: 100%;
+            background-color: rgba($blue-color, 0.788);
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            left: -3em;
+        }
+        &::before
+        {
+            content: "";
+            position: fixed;
+            width: 50%;
+            height: 100%;
+            background-color: rgba($blue-color, 0.900);
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            left: -6em;
+            z-index: 2;
+        }
+    }
+    .form{
+        @include center_flex(column,center,center);
+        margin-left: 50%;
+        width: 50%;
+        height: 100%;
+    }
     h3{
         text-align: center;
         margin-bottom: 1em;
@@ -22,7 +194,6 @@ html{
        // color: rgb(0, 87, 102);
     }
     form{
-       
         input{
             height: 3em;
             width: 35em;
@@ -45,9 +216,9 @@ html{
             border: none;
             outline: none;
             cursor: pointer;
-            background-color: rgb(0, 162, 255);
+            background-color:  rgb(0, 190, 111);
             border-radius: 5px;
-           /// width: 13em;
+            //width: 13em;
             color: white;
             margin-top: 2em;
             display: block;
@@ -56,7 +227,7 @@ html{
            transition: all 0.3s ease-in-out;
            &:hover
             {
-                background-color: rgb(0, 128, 202);
+                background-color: rgb(3, 141, 83);
             }
 
         }
@@ -70,11 +241,10 @@ html{
 }
 .recherche
 {
-    z-index: 2;
     position: absolute;
-    top: 6em;
+    top: 20.5em;
     background-color: rgb(238, 238, 238);
-    width: 29.2em;
+    width: 29.1em;
     button{
         background-color: none;
         padding: 0.8em;
@@ -94,8 +264,39 @@ html{
             margin-bottom: 1em;
         }
         &:hover{
-            background-color: rgb(248, 248, 248);
+            background-color:  rgb(255, 255, 255);
         }
     }
     
+}
+
+
+@keyframes barre {
+    0%{
+        left: 33.5%;
+        top: -2em;
+        height: 6em;
+    }
+    100%{
+        /*
+        height: 0em;
+        opacity: 0;
+        top: -5em;
+        left: 15%;*/
+        left: 28%;
+        top: 0em;
+        height: 0;
+    }
+}
+
+@keyframes rond {
+    0%{
+        width: 4em;
+        height: 4em;
+    }
+    100%{
+        width: 15em;
+        border-radius: 2em;
+    }
+
 }
