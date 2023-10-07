@@ -1,0 +1,134 @@
+@import "fx";
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+html{
+    height: 100vh;
+    body{
+        height: 100%;
+    }
+}
+header{
+    position: fixed;
+    height: 50%;
+    width: 100%;
+    border-bottom-left-radius: 90%;
+    border-bottom-right-radius: 80%;
+    background-image: url('../../img/istockphoto-520614651-612x612.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    z-index: 3;
+    h3{
+        position: absolute;
+        z-index: 4;
+        color: white;
+        left: 3.5em;
+        top: 1.2em;
+        font-size: 35px;
+        span{
+            color: rgb(0, 255, 149);
+        }
+    }
+    .all{
+        position: absolute;
+        top: 3em;
+        left: 5em;
+        background-color: rgb(0, 255, 149);
+        width: 0.7em;
+        height: 2.5em;
+        transition: all 0.3s ease-in-out;
+        z-index: 4;
+        .hor{
+            position: absolute;
+            background-color: rgb(0, 255, 149);
+            transform: rotate(-90deg);
+            width: 0.7em;
+            height: 2.5em;
+            transition: all 0.3s ease-in-out;
+        }
+        .div-sasa1
+        {
+            position: absolute;
+            transform: rotate(-90deg) translateY(-1em);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            background-color: rgb(255, 255, 255);
+        }
+    }
+    .div-sasa
+    {
+        height: 0;
+        transition: all 0.3s ease-in-out;
+        background-color: rgb(255, 255, 255);
+    }
+
+    &::after
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(88, 186, 252, 0.493), rgba(43, 170, 255, 0.658));
+        border-bottom-left-radius: 90%;
+        border-bottom-right-radius: 80%;
+    }
+}
+
+.container{
+    position: absolute;
+    bottom: 0;
+    height: 80%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    .optopns
+    {
+        width: 100%;
+        height: 100%;
+        @include center_flex(row);
+        div{
+            height: 8em;
+            width: 15em;
+            margin-top: 10em;
+            margin-right: 3em;
+            padding-left: 2em;
+            border-left: 2px solid rgb(0, 159, 252);
+            @include center_flex(row);
+            h3{
+                font-size:32px;
+                color: rgb(0, 159, 252);
+                
+            }
+            a{
+                text-decoration: none;
+                transition: all 0.3s ease-in-out;
+                h3{
+                    font-weight: 400;
+                }
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            &:first-child
+            {
+                background-color: white;
+                
+                height: 8em;
+                
+                margin-left: 5em;
+                h3{
+                    color: rgb(0, 162, 255);
+                    font-size: 32px;
+                    span{
+                        font-weight: 280;
+                    }
+                }
+            }
+        }
+        
+    }
+}
