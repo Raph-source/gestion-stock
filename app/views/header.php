@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Poppins:wght@300&display=swap" rel="stylesheet">
     <title><?php if (isset($title)) echo $title; else echo "Document"; ?></title>
     <link rel="stylesheet" href="<?php if(isset($style))echo $style;?>">
+    <link rel="stylesheet" href="<?php if(isset($style1))echo $style1;?>">
     <link rel="stylesheet" href="<?php if(isset($bootstrap))echo $bootstrap;?>">
 </head>
 <body>
