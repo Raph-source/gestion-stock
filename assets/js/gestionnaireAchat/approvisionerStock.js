@@ -20,3 +20,25 @@ produitTrouver.addEventListener('click', function(event){
     }
 });
 
+/*
+let box = document.querySelectorAll('.box')
+let boxcenter = document.querySelector('.boxcenter')
+
+setInterval(() => {
+    let n = 0
+    if (box[0].getAttribute('class') == 'box box1' && boxcenter.getAttribute('class')=='boxcenter boxcenter1') {
+        boxcenter.classList.remove('boxcenter');
+        box.forEach(element => {
+            element.classList.remove('box1')
+        });
+
+    }
+    else{
+        boxcenter.classList.add('boxcenter')
+
+        box.forEach(element => {
+            element.classList.add('box1')
+        });
+    }
+
+}, 1000);*/

@@ -1,0 +1,119 @@
+.container .form form
+{
+    /*background-color: rgb(252, 252, 252);*/
+
+}
+
+.container .form  input[type="text"], .container .form input[type="number"]
+{
+    padding: 1.8em;
+    outline: none;
+    border-radius:2em ;
+    text-indent: 2em;
+    border: 0.8px solid rgb(170, 170, 170);
+    transition: all 0.2s ease-in-out;
+    width: 26em;
+    margin-bottom: 1em;
+}
+.container .form  input[type="submit"]
+{
+    width: 26em;
+}
+input[type="number"]:hover{
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0px 0px 10px rgb(168, 168, 168);
+    border-color: rgb(238, 238, 238);
+}
+select{
+    border: 2px solid rgb(206, 206, 206);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 1em;
+}
+select:active
+{
+    border: 2px solid rgb(175, 175, 175);
+}
+
+/* Animation begin*/
+.container .anim-appro
+{
+    position: relative;
+    top: 68%;
+    left: 0%;
+}
+.container .anim-appro .boxcenter
+{
+    position: absolute;
+    background-color: none;
+    background-color: rgb(255, 255, 255);
+    width: 2em;
+    height: 2em;
+    border-radius: 5px;
+    left: 30%;
+    top: 30%;
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+}
+.container .anim-appro .box
+{
+    position: absolute;
+    background-color: none;
+    background-color: rgb(255, 255, 255);
+    width: 2em;
+    height: 2em;
+    border-radius: 5px;
+    left: 20%;
+    top: 30%;
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0) rotate(45deg);
+}
+.container .anim-appro .box:nth-child(2)
+{
+
+    background-color: rgb(6, 45, 151);
+    left: 30%;
+    top: 50%;
+    transform: scale(0) translateY(-4em) rotate(45deg);
+    z-index: 4;
+}
+.container .anim-appro .box:nth-child(3)
+{
+    background-color: rgb(255, 0, 0);
+    left: 40%;
+    top: 50%;
+    z-index: 4;
+}
+.container .anim-appro .box:nth-child(4)
+{
+    background-color: rgb(0, 0, 0);
+    left: 30%;
+    top: 50%;
+    transform: scale(0) translateY(4em) rotate(45deg);
+    z-index: 4;
+}
+.container .anim-appro .box1
+{
+    background-color: rgb(0, 0, 0);
+    left: 30%;
+    top: 50%;
+    transform: scale(0) translateY(0) rotate(0);
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+}
+.container .anim-appro .boxcenter1
+{
+    background-color: rgb(0, 0, 0);
+    left: 30%;
+    top: 50%;
+    transform: scale(0);
+    z-index: 4;
+}
+/* Animation End*/
+.recherche
+{
+    top: 15em;
+    width: 21.8em;
+}
