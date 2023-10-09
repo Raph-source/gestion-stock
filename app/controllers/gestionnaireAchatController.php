@@ -31,7 +31,7 @@ class GestionnaireAchatController{
                     //inserer la quantité fournie
                     $this->model->produit->fournir($qte);
 
-                    $notif = "opération réessi";
+                    $notif = "opération réussi";
                     $trouver = $this->model->fournisseur->getAll();
                     require_once VIEW.'gestionnaireAchat/approvisionerStock.php';
                 }

@@ -28,12 +28,3 @@ $(document).ready(function() {
     });
 });
 
-/*
-let input = document.querySelector('.inputRech')
-
-
-setInterval(() => {
-    if (input.value != "") {
-        document.querySelector('.recherche').style.visibility = "visible"
-    }
-}, 1000);*/

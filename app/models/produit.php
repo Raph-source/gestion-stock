@@ -48,11 +48,56 @@ class Produit extends Model{
         return $trouver['uniteMax'];
     }
 
-    public function fournir($qte){
-        $requete = $this->bdd->prepare("UPDATE produit SET stock = :stock WHERE nom = :nom");
-        $requete->bindParam(':stock', $qte);
+    public function fournir($qte):void{
+        //récuperation de la quantité en stock
+        $stock = Produit::getStock();
+        
+        //nouvelle valeur en du stock
+        $stock += $qte;
+
+        $requete = $this->bdd->prepare("UPDATE produit SET entre = :entre, stock = :stock
+        WHERE nom = :nom");
+        $requete->bindParam(':entre', $qte);
+        $requete->bindParam(':stock', $stock);
         $requete->bindParam(':nom', $this->produitChercher);
 
         $requete->execute();
+    }
+
+    public function vendre($qte):void{
+        //récuperation de la quantité en stock
+        $stock = Produit::getStock();
+
+        //nouvelle valeur en du stock
+        $stock -= $qte;
+
+        $requete = $this->bdd->prepare("UPDATE produit SET sorite = :sorite, stock = :stock
+        WHERE nom = :nom");
+        $requete->bindParam(':sorite', $qte);
+        $requete->bindParam(':stock', $stock);
+        $requete->bindParam(':nom', $this->produitChercher);
+
+        $requete->execute();
+    }
+
+    public function getInventerAll():array{
+        $requete = $this->bdd->query("SELECT * FROM produit
+        WHERE uniteMax IS NOT NULL 
+        AND uniteMin IS NOT NULL 
+        AND uniteSec IS NOT NULL");
+
+        $trouver = $requete->fetchAll();
+
+        return $trouver;
+
+    }
+    private function getStock():int{
+        $requete = $this->bdd->prepare("SELECT stock FROM produit WHERE nom = :nom");
+        $requete->bindParam(':nom', $this->produitChercher);
+        $requete->execute();
+
+        $trouver = $requete->fetch();
+        
+        return $trouver['stock'];
     }
 }
