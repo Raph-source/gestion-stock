@@ -13,7 +13,9 @@
                     'authentification' => 'authentification'
                 ],
                 'facturierController' => [
-                    'chercherProduit' => 'chercherProduit'
+                    'chercherProduit' => 'chercherProduit',
+                    'genererFacture' => 'getFormGenererFacture',
+                    'formulaire-generer-facture' => 'genererFacture'
                 ],
                 'gestionnaireStockController' => [
                     'definir-politique-stock' => 'getFormPolitiqueStock',

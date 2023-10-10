@@ -1,0 +1,125 @@
+.container .form form
+{
+    /*background-color: rgb(252, 252, 252);*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+    border-radius : 3em;
+}
+
+.container .form  input[type="text"], .container .form input[type="number"]
+{
+    padding: 1.8em;
+    outline: none;
+    border-radius:2em ;
+    text-indent: 2em;
+    width: 25em;
+    border: 0.8px solid rgb(170, 170, 170);
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="number"]:hover{
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0px 0px 10px rgb(168, 168, 168);
+    border-color: rgb(238, 238, 238);
+}
+
+.container .form  input[type="submit"]
+{
+    width: 25em;
+    margin-top: 0;
+}
+.container .content .ecrit h3
+{
+    width: 13em;
+    left: -14%; 
+}
+.container .content .ecrit h3:last-child
+{
+    top: 42%;
+    left: -20%;
+}
+.container .anim-politique
+{
+    position: relative;
+    top: 65%;
+    left: 0%;
+}
+.container .anim-politique .carnet
+{
+    position: absolute;
+    background-color: none;
+    border: 5px solid rgb(255, 255, 255);
+    width: 6em;
+    height: 6em;
+    border-radius: 2px;
+    left: 21%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.container .anim-politique .carnet .div
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+.container .anim-politique .carnet .div:first-child
+{
+    margin-top: 0.5em;
+}
+.container .anim-politique .carnet div .bol
+{
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    transform: translateX(-5px);
+    opacity: 0;
+    background-color: rgb(0, 255, 170);
+    transition: all 0.3s ease-in-out;
+}
+.container .anim-politique .carnet div .barr
+{
+    width: 0%;
+    height: 1em;
+    background-color: rgb(0, 255, 170);
+    margin-left: 0.2em;
+    transition: all 0.3s ease-in-out;
+}
+.container .anim-politique .carnet div .bol1
+{
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.3s;
+}
+.container .anim-politique .carnet div .barr1
+{
+    width: 50%;
+    transition: all 0.3s ease-in-out;
+}
+.container .anim-politique .carnet div #two
+{
+    transition-delay: 0.3s;
+}
+.container .anim-politique .carnet div  #three
+{
+    transition-delay: 0.6s;
+}
+.recherche
+{
+    top: 14.5em;
+    width: 20em;
+}

@@ -17,7 +17,10 @@ class ChercherProduit{
 
     public function getProduitsFacturier($enter):array{
         $requete = $this->bdd->prepare('SELECT nom FROM produit 
-        WHERE nom LIKE :entrer AND uniteMax IS NOT NULL AND uniteMin IS NOT NULL AND uniteSec IS NOT NULL 
+        WHERE nom LIKE :entrer AND uniteMax IS NOT NULL 
+        AND uniteMin IS NOT NULL 
+        AND uniteSec IS NOT NULL
+        AND stock IS NOT NULL 
         ORDER BY id ASC');
         $requete->bindValue(':entrer', '%' . $enter . '%');
 
@@ -29,7 +32,10 @@ class ChercherProduit{
 
     public function getProduitsGestionnaireAchat($enter):array{
         $requete = $this->bdd->prepare('SELECT nom FROM produit 
-        WHERE nom LIKE :entrer AND uniteMax IS NOT NULL AND uniteMin IS NOT NULL AND uniteSec IS NOT NULL 
+        WHERE nom LIKE :entrer 
+        AND uniteMax IS NOT NULL 
+        AND uniteMin IS NOT NULL 
+        AND uniteSec IS NOT NULL 
         ORDER BY id ASC');
         $requete->bindValue(':entrer', '%' . $enter . '%');
 
@@ -61,7 +67,7 @@ if(isset($_GET['action'])){
         header('Content-Type: application/json');
         echo json_encode($trouver);
     }
-    else if($_GET['action'] == 'autocompleteGestionnaireAchat'){
+    else if($_GET['action'] == 'autoCompleteGestionnaireAchat'){
         $entrer = $_GET['produitEntrer'];
 
         $facturier = new ChercherProduit();

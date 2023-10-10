@@ -37,7 +37,7 @@ $(document).ready(function() {
         let entrer = $(this).val();
         $('#produitTrouver').empty();
         $.ajax({
-            url: lienAbsolu + 'app/models/chercherProduit.php?action=autocompletionFacturier',
+            url: lienAbsolu + 'app/models/chercherProduit.php?action=autocompleteGestionnaireStock',
             method: 'GET',
             data: { produitEntrer: entrer },
             dataType: 'json',

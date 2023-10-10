@@ -1,0 +1,12 @@
+header{
+    position: fixed;
+    height: 50%;
+    width: 100%;
+    border-bottom-left-radius: 90%;
+    border-bottom-right-radius: 80%;
+    background-image: url('../../img/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    z-index: 3;
+}

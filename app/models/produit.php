@@ -48,6 +48,29 @@ class Produit extends Model{
         return $trouver['uniteMax'];
     }
 
+
+    public function getUniteMin():int{
+        
+        $requete = $this->bdd->prepare("SELECT uniteMin FROM produit WHERE nom = :nom");
+        $requete->bindParam(':nom', $this->produitChercher);
+        $requete->execute();
+
+        $trouver = $requete->fetch();
+        
+        return $trouver['uniteMin'];
+    }
+
+
+    public function getId():int{
+        
+        $requete = $this->bdd->prepare("SELECT id FROM produit WHERE nom = :nom");
+        $requete->bindParam(':nom', $this->produitChercher);
+        $requete->execute();
+
+        $trouver = $requete->fetch();
+        
+        return $trouver['id'];
+    }
     public function fournir($qte):void{
         //récuperation de la quantité en stock
         $stock = Produit::getStock();
@@ -71,9 +94,9 @@ class Produit extends Model{
         //nouvelle valeur en du stock
         $stock -= $qte;
 
-        $requete = $this->bdd->prepare("UPDATE produit SET sorite = :sorite, stock = :stock
+        $requete = $this->bdd->prepare("UPDATE produit SET sortie = :sortie, stock = :stock
         WHERE nom = :nom");
-        $requete->bindParam(':sorite', $qte);
+        $requete->bindParam(':sortie', $qte);
         $requete->bindParam(':stock', $stock);
         $requete->bindParam(':nom', $this->produitChercher);
 
@@ -91,13 +114,26 @@ class Produit extends Model{
         return $trouver;
 
     }
-    private function getStock():int{
+
+    public function getStock():int{
         $requete = $this->bdd->prepare("SELECT stock FROM produit WHERE nom = :nom");
         $requete->bindParam(':nom', $this->produitChercher);
         $requete->execute();
 
         $trouver = $requete->fetch();
         
+        if($trouver['stock'] == NULL)
+            return 0;
         return $trouver['stock'];
+    }
+
+    public function getPrix():float{
+        $requete = $this->bdd->prepare("SELECT prix FROM produit WHERE nom = :nom");
+        $requete->bindParam(':nom', $this->produitChercher);
+        $requete->execute();
+
+        $trouver = $requete->fetch();
+        
+        return $trouver['prix'];
     }
 }
