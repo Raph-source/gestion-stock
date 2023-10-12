@@ -44,10 +44,11 @@ class FacturierController{
             $this->model->produit->setAttribut($nom, '', '', '');
             //verifier si le produt existe
             if($this->model->produit->checkProduit()){
-                //verifier l'unite minial
+                //verifier l'unite minial et le stock
                 $uniteMin = $this->model->produit->getUniteMin();
+                $stock = $this->model->produit->getStock();
 
-                if($uniteMin >= $qte){
+                if($uniteMin < $qte && ($stock - $qte) > $uniteMin){
                     //inserer la quantité
                     $this->model->produit->vendre($qte);
 

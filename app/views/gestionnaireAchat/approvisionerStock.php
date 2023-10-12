@@ -57,7 +57,6 @@
 
             <?php
                 $jquery = ASSETS_JS.'jquery-3.7.0.min.js';
-                $script = ASSETS_JS.'chercherProduit.js';
                 $script1 = ASSETS_JS.'gestionnaireAchat/approvisionerStock.js';
                 require_once FOOTER;
             ?>

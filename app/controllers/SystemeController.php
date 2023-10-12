@@ -47,4 +47,9 @@
                 require_once VIEW.'authentification.php';
             }
         }
+
+        public function inventaire(){
+            $inventaire = $this->model->produit->getInventaireAll();
+            require_once VIEW.'inventaire.php';
+        }
     }

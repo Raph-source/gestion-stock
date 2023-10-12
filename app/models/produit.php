@@ -103,11 +103,12 @@ class Produit extends Model{
         $requete->execute();
     }
 
-    public function getInventerAll():array{
+    public function getInventaireAll():array{
         $requete = $this->bdd->query("SELECT * FROM produit
         WHERE uniteMax IS NOT NULL 
         AND uniteMin IS NOT NULL 
-        AND uniteSec IS NOT NULL");
+        AND uniteSec IS NOT NULL
+        AND stock IS NOT NULL");
 
         $trouver = $requete->fetchAll();
 

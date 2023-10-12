@@ -10,7 +10,8 @@
             $this->allRequest = [
                 'SystemeController' => [
                     'index' => 'getFormAuthentification',
-                    'authentification' => 'authentification'
+                    'authentification' => 'authentification',
+                    'voir-inventaire' => 'inventaire'
                 ],
                 'facturierController' => [
                     'chercherProduit' => 'chercherProduit',
