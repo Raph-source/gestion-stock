@@ -13,8 +13,7 @@
             <input type="submit" value="Se connecter">
                 
                     <?php
-                        if(isset($notif));
-
+                        if(isset($notif))
                             {
                                 echo "<p class='erreur'>";
                                 echo "<script>
