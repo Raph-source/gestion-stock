@@ -31,8 +31,9 @@ class Client extends Model{
     }
 
     public function checkClient():bool{
-        $requete = $this->bdd->prepare('SELECT * FROM client WHERE nom = :nom');
+        $requete = $this->bdd->prepare('SELECT * FROM client WHERE nom = :nom AND phone = :phone');
         $requete->bindParam(':nom', $this->nom);
+        $requete->bindParam(':phone', $this->phone);
         $requete->execute();
 
         $trouver = $requete->fetchAll();
