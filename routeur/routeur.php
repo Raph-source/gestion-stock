@@ -21,12 +21,14 @@
                 ],
                 'gestionnaireStockController' => [
                     'definir-politique-stock' => 'getFormPolitiqueStock',
-                    'formulaire-politique-stock' => 'definirPolitiqueStock'
+                    'formulaire-politique-stock' => 'definirPolitiqueStock',
+                    'retour-acceuil-gestionnaire-stock' => 'getAcceuil'
                 ],
 
                 'gestionnaireAchatController' => [
                     'approvisioner-stock' => 'getFormApprovisionerStock',
-                    'formulaire-approvisioner-stock' => 'approvisionerStock'
+                    'formulaire-approvisioner-stock' => 'approvisionerStock',
+                    'retour-acceuil-gestionnaire-achat' => 'getAcceuil'
                 ]
             ];
         }

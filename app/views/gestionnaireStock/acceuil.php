@@ -38,6 +38,7 @@
         </div>
         
     </div>
+    <a href="index">Retour</a><br>
 </div>
 <?php
     $script = ASSETS_JS.'gestionnaireStock/accueils.js';

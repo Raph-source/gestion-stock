@@ -54,4 +54,8 @@ class GestionnaireAchatController{
             require_once VIEW.'gestionnaireAchat/approvisionerStock.php';
         }
     }
+
+    public function getAcceuil(){
+        require_once VIEW.'gestionnaireAchat/acceuil.php';
+    }
 }

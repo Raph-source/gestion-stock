@@ -36,7 +36,7 @@
                 <h3>Voir l'inventaire</h3>
             </a>
         </div>
-        
+        <a href="index">Retour</a><br>
     </div>
 </div>
 <?php

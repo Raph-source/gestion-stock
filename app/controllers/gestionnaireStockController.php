@@ -50,4 +50,8 @@ class GestionnaireStockController{
         }
     }
 
+    public function getAcceuil(){
+        require_once VIEW.'gestionnaireStock/acceuil.php';
+    }
+
 }

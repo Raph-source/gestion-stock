@@ -54,11 +54,12 @@
                 if(isset($notif))
                     echo $notif;
             ?>
-
-            <?php
-                $jquery = ASSETS_JS.'jquery-3.7.0.min.js';
-                $script1 = ASSETS_JS.'gestionnaireAchat/approvisionerStock.js';
-                require_once FOOTER;
-            ?>
+            <a href="retour-acceuil-gestionnaire-achat">Retour</a>
     </div>
 </div>
+
+<?php
+    $jquery = ASSETS_JS.'jquery-3.7.0.min.js';
+    $script1 = ASSETS_JS.'gestionnaireAchat/approvisionerStock.js';
+    require_once FOOTER;
+?>

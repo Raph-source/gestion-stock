@@ -41,6 +41,7 @@
                 if(isset($notif))
                     echo $notif;
             ?>
+        <a href="index">Retour</a><br>
     </div>
 </div>
 
