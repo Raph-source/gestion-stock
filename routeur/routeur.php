@@ -16,7 +16,8 @@
                 'facturierController' => [
                     'chercherProduit' => 'chercherProduit',
                     'genererFacture' => 'getFormGenererFacture',
-                    'formulaire-generer-facture' => 'genererFacture'
+                    'formulaire-generer-facture' => 'genererFacture',
+                    'acceuil' => 'getAcceuil'
                 ],
                 'gestionnaireStockController' => [
                     'definir-politique-stock' => 'getFormPolitiqueStock',

@@ -15,7 +15,7 @@
         <p><span class="name">Total:  </span> <span><?php echo $qte * $prix;?></span></p>
     </div>
 </div>
-
+<a href="genererFacture">Retour</a><br>
 <?php
     $script = ASSETS_JS.'facturier/facture.js';
     require_once FOOTER;

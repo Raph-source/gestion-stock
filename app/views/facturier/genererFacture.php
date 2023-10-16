@@ -35,12 +35,12 @@
                     echo "<p class='erreur'> ".$notif."</p>";
             ?>
     </form>
+    <a href="acceuil">Retour</a>
 
-
-
-            <?php
-            $script = ASSETS_JS.'facturier/genererFacture.js';
-                require_once FOOTER;
-            ?>
     </div>
 </div>
+
+<?php
+    $script = ASSETS_JS.'facturier/genererFacture.js';
+        require_once FOOTER;
+?>
