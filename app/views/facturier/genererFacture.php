@@ -3,6 +3,7 @@
     $style = ASSETS_CSS.'facturier/acceuil.css';
     $style1 = ASSETS_CSS.'gestionnaireStock/politiqueStock.css';
     $style2 = ASSETS_CSS.'facturier/generer.css';
+    $style3 = ASSETS_CSS.'links.css';
     require_once HEADER;
 ?>
     <div class="header">
@@ -29,14 +30,14 @@
         <input type="number" name="qte" id="" placeholder="Entrez la quantité" class="inputRech"/><br>
         <input type="text" name="phone" id="" placeholder="Entrez le numero de telephone" class="inputRech"/><br>
         <input type="submit" value="valider" id="validation" >
-
+        <a href="acceuil" class="link">Retour</a>     
         <?php
                 if(isset($notif))
                     echo "<p class='erreur'> ".$notif."</p>";
             ?>
+            
     </form>
-    <a href="acceuil">Retour</a>
-
+   
     </div>
 </div>
 

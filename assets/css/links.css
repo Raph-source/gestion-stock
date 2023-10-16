@@ -1,0 +1,17 @@
+.link
+{
+    margin-top: 1em;
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.links
+{
+    margin-top: 5em!important;
+    color: rgb(69, 184, 250);
+    font-size: 30px;
+}
+.link:hover
+{
+    text-decoration: underline;
+}

@@ -1,6 +1,7 @@
 <?php
     $title = "Acceuil";
     $style = ASSETS_CSS.'gestionnaireStock/acceuil.css';
+    $style1 = ASSETS_CSS.'links.css';
     require_once HEADER;
 
     //require_once 'option.php';
@@ -36,7 +37,7 @@
                 <h3>Voir l'inventaire</h3>
             </a>
         </div>
-        
+        <a href="index" class="link links"  >Retour</a><br>
     </div>
     <a href="index">Retour</a><br>
 </div>

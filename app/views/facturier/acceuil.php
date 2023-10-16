@@ -1,6 +1,7 @@
 <?php
     $title = "Acceuil";
     $style = ASSETS_CSS.'facturier/acceuil.css';
+    $style1 = ASSETS_CSS.'links.css';
     require_once HEADER;
 ?>
     <div class="header">
@@ -41,7 +42,7 @@
                 if(isset($notif))
                     echo $notif;
             ?>
-        <a href="index">Retour</a><br>
+        <a href="index" class="link">Retour</a><br>
     </div>
 </div>
 

@@ -2,6 +2,7 @@
    $title = "Politique stock";
     $style = ASSETS_CSS.'facturier/acceuil.css';
     $style1 = ASSETS_CSS.'gestionnaireStock/politiqueStock.css';
+    $style3 = ASSETS_CSS.'links.css';
     require_once HEADER;
 ?>
     <div class="header">
@@ -43,7 +44,7 @@
                 if(isset($notif))
                     echo $notif;
             ?>
-            <a href="retour-acceuil-gestionnaire-stock">Retour</a>
+            <a href="retour-acceuil-gestionnaire-stock" class="link">Retour</a>
     </div>
 </div>
 <?php

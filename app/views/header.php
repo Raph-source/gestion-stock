@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?php if(isset($style))echo $style;?>">
     <link rel="stylesheet" href="<?php if(isset($style1))echo $style1;?>">
     <link rel="stylesheet" href="<?php if(isset($style2))echo $style2;?>">
+    <link rel="stylesheet" href="<?php if(isset($style3))echo $style3;?>">
     <link rel="stylesheet" href="<?php if(isset($bootstrap))echo $bootstrap;?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 

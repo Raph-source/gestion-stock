@@ -2,6 +2,7 @@
     $title = "Approvisioner stock";
     $style = ASSETS_CSS.'facturier/acceuil.css';
     $style1 = ASSETS_CSS.'gestionnaireAchat/approvisionerAchat.css';
+    $style2 = ASSETS_CSS.'links.css';
     require_once HEADER;
 ?>
     <div class="header">
@@ -54,7 +55,7 @@
                 if(isset($notif))
                     echo $notif;
             ?>
-            <a href="retour-acceuil-gestionnaire-achat">Retour</a>
+            <a href="retour-acceuil-gestionnaire-achat" class="link">Retour</a>
     </div>
 </div>
 
