@@ -94,7 +94,7 @@ class FacturierController{
     }
 
     public function getAcceuil(){
-        require_once VIEW.'gestionnaireAchat/acceuil.php';
+        require_once VIEW.'facturier/acceuil.php';
     }
 }
 
