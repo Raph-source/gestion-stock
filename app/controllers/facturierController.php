@@ -46,9 +46,10 @@ class FacturierController{
             if($this->model->produit->checkProduit()){
                 //verifier l'unite minial et le stock
                 $uniteMin = $this->model->produit->getUniteMin();
+                
                 $stock = $this->model->produit->getStock();
 
-                if($uniteMin < $qte && ($stock - $qte) > $uniteMin){
+                if(($uniteMin > $qte) && (($stock - $qte) > $uniteMin)){
                     //inserer la quantité
                     $this->model->produit->vendre($qte);
 

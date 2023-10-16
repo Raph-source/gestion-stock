@@ -1,0 +1,21 @@
+.container form input[type=text],input[type=number] {
+    padding: 1.8em;
+    display: block;
+    outline: none;
+    border-radius: 2em;
+    text-indent: 2em;
+    border: 0.8px solid rgb(170, 170, 170);
+    margin-bottom: 1em;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .container form .erreur{
+    padding: .5em;
+    width: 100%;
+    margin-top: 1em;
+    border-radius: 2px;
+    background-color: rgb(255, 29, 29);
+    color: white;
+    text-align: center;
+  }
+  

@@ -14,16 +14,12 @@
                 
                     <?php
                         if(isset($notif))
+
                             {
-                                echo "<p class='erreur'>";
-                                echo "<script>
-                                    let a = document.querySelector('.erreur')
-                                    a.classList.toggle('errVis')
-                                "; 
-                                echo "</script>";
+                                echo "<p class='erreur'>"; 
                                 echo $notif;
                                 echo ' </p>';
-                            }
+                            }   
                         
                     ?>
             

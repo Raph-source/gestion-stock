@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+html
+{
+    height: 100vh;
+}
+html body{
+    height: 100%;
+    background-color: rgb(250, 250, 250);
+}   
+body .container
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body .container table
+{
+    width: 80%;
+    margin-top: 2em;
+    border-collapse: collapse;border-radius: 5px;
+    box-shadow: 0px 0px 5px rgb(221, 221, 221);
+}
+body .container table tbody tr:nth-child(2n){
+    padding: 0.5em;
+    width: 10%;
+    background-color: rgb(226, 231, 233);
+}
+
+
+body .container table tr th{
+    padding: 0.2em;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 5.1em;
+}
+body .container table tr td{
+    text-indent: 4.5em;
+    color: rgb(51, 51, 51);
+}
+body .container table tr td div{
+    padding: 0.5em;
+    width: 100%;
+}
+
+body .container table tr .vert div{
+    width: 100%;
+    background-color: rgb(14, 219, 14);
+    color: white;
+}
+
+body .container table tr .orange div{
+    background-color: rgb(255, 218, 52);
+    padding: 0.5em;
+    width: 50%;
+    color: rgb(41, 41, 41);
+}
+
+body .container table tr .rouge div{
+    padding: 0.5em;
+    width: 10%;
+    background-color: red;
+}
+
